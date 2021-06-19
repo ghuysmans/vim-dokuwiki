@@ -36,6 +36,10 @@ setlocal expandtab
 " Hide conceal text except when editing a line
 setlocal conceallevel=2
 setlocal concealcursor=nc
+" Handle links
+setlocal isfname-=[,]
+setlocal isfname+=:
+setlocal includeexpr=substitute(v:fname,':','/','g').'.txt'
 
 unlet! b:current_syntax
 if !exists('g:dokuwiki_fenced_languages')
